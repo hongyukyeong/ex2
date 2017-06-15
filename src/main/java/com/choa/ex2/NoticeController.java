@@ -21,6 +21,12 @@ public class NoticeController {
 	@Inject //inject는 type으로 찾음 bean 에서 만든 것을 넣어라
 	private NoticeService noticeService; 
 	
+	@RequestMapping(value="test")
+	public void test(){
+		System.out.println(noticeService);
+		noticeService.test();
+	}
+	
 	//list
 	@RequestMapping(value="noticeList", method=RequestMethod.GET)
 	public void noticeList(Model model, @RequestParam(defaultValue="1") Integer curPage) throws Exception{
@@ -39,7 +45,8 @@ public class NoticeController {
 	
 	//writeForm
 	@RequestMapping(value="noticeWrite", method=RequestMethod.GET)
-	public void noticeWrite(){
+	public void noticeWrite(Model model){
+		model.addAttribute("path", "Write");
 		
 	}
 	//write
@@ -68,10 +75,13 @@ public class NoticeController {
 	
 	//updateForm
 	@RequestMapping(value="noticeUpdate", method=RequestMethod.GET)
-	public void noticeUpdate(Integer num, Model model) throws Exception{
+	public String noticeUpdate(Integer num, Model model) throws Exception{
 		
 			NoticeDTO noticeDTO = noticeService.noticeView(num);
 			model.addAttribute("dto", noticeDTO);
+			model.addAttribute("path", "Update");
+			
+			return "notice/noticeWrite";
 	}
 	
 	//update

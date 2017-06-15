@@ -10,6 +10,7 @@
 <h1>
 	Hello world!  
 </h1>
+<a href ="notice/noticeList">NoticeList</a>
 
 <h2>GIT Test</h2>
 <ul>
@@ -19,6 +20,7 @@
 	<li>Bug_fix_2</li>
 	<li>master</li>
 	<li>comflict_1</li>
+	
 	
 </ul>
 

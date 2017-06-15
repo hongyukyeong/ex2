@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.choa.util.MakePage;
@@ -13,20 +14,24 @@ import com.choa.util.PageMaker;
 //NoticeService noticeService = new NoticeService();
 public class NoticeService {
 	
-
-	/*
-	public void setNoticeDAO(NoticeDAO noticeDAO) {
+	@Inject
+	@Qualifier("notice")
+	private NoticeDAO noticeDAO;
+	
+	public void test(){
+		System.out.println(noticeDAO);
+	}
+	
+	/*//Constructor
+	public NoticeService(NoticeDAO noticeDAO) {
 		this.noticeDAO = noticeDAO;
 	}
-	*/
 	
-	/*//constructor 생성자 만들어서 하는 법
-	public NoticeService(NoticeDAO noticeDAO){
+	//setter
+	public void setNoticeDAO(NoticeDAO noticeDAO) {
 		this.noticeDAO = noticeDAO;
 	}*/
-
-	@Inject
-	private NoticeDAO noticeDAO;
+	
 	
 	//view
 	public NoticeDTO noticeView(int num) throws Exception{
