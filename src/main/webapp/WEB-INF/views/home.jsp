@@ -9,6 +9,11 @@
 	Hello world!  
 </h1>
 
+<h2>GIT Test</h2>
+<ul>
+	<li>choa</li>
+</ul>
+
 <P>  The time on the server is ${serverTime}. </P>
 </body>
 </html>
