@@ -12,6 +12,7 @@
 <h2>GIT Test</h2>
 <ul>
 	<li>choa</li>
+	<li>iu</li>
 </ul>
 
 <P>  The time on the server is ${serverTime}. </P>
